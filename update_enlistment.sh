@@ -13,12 +13,13 @@ npm install
 popd
 popd
 popd
+echo ""
 echo " ###### Installation Complete ###### "
 echo ""
 echo "Go to /var/app/Enerspectrum/backend"
 echo "And please run the command 'node app'"
 echo ""
 echo "#####################################"
-
+echo ""
 
  

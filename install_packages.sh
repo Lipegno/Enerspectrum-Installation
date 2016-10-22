@@ -10,7 +10,7 @@ echo "$OS_VER"
 
 if [ "$OS_VER" = "16.04" ];
 then
-    echo "Adding Xenial repos"
+    echo "Adding Xenial Repos - Experimental"
     apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
     echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
     pushd Xenial
@@ -46,3 +46,9 @@ rm -rf ./temp/
 echo "Adding Redis to Startup"
 update-rc.d redis_6379 defaults
 
+#Adds mongo to startup -> This only needs to be done on 16.04
+if [ "$OS_VER" = "16.04" ];
+then
+    echo "Adding mongo to startup"
+    systemctl start mongodb
+fi
