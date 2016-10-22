@@ -4,11 +4,11 @@ pushd /var/app/
 git clone $1
 pushd Enerspectrum/backend/
 npm cache clean
-rm -rf node_modules
+#rm -rf node_modules
 npm install
 pushd server
 npm cache clean
-rm -rf node_modules
+#rm -rf node_modules
 npm install
 popd
 popd

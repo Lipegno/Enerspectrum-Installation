@@ -6,9 +6,9 @@ if [ $(id -u) != 0 ]; then
 fi
 #Gets the os Version
 OS_VER=$(lsb_release -sr)
+echo "$OS_VER"
 
-
-if [ "$OS_VER"=="16.04" ] 
+if [ "$OS_VER" = "16.04" ];
 then
     echo "Adding Xenial repos"
     apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
@@ -16,7 +16,6 @@ then
     pushd Xenial
     cp mongodb.service /etc/systemd/system/
     popd
-
 else
     echo "If you're not using Xenial hope you're using Ubuntu Trusty"
     echo "#### This has only been tested on Ubuntu 14.04 and 16.04 ####"
