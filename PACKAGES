@@ -1,0 +1,8 @@
+git
+nodejs
+openssl
+mongodb-org
+npm
+upstart
+build-essential
+libkrb5-dev
