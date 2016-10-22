@@ -2,11 +2,16 @@
 mkdir /var/app/
 pushd /var/app/
 git clone $1
-#npm update
+pushd Enerspectrum/backend/
+npm install
+pushd server
+npm install
 popd
-pushd ~/Enerspectrum-Install/Enerspectrum-Installation/temp/utils
+popd
+popd
+pushd ~/Enerspectrum-Installation/temp/redis-stable/utils
 echo "Installing Redis Server"
-source ./install_server.sh
+sh ./install_server.sh
 pwd
 popd
 echo "Removing the Folder"
