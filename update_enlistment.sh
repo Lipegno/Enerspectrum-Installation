@@ -3,28 +3,22 @@ mkdir /var/app/
 pushd /var/app/
 git clone $1
 pushd Enerspectrum/backend/
+npm cache clean
+rm -rf node_modules
 npm install
 pushd server
+npm cache clean
+rm -rf node_modules
 npm install
 popd
 popd
 popd
-pushd ~/Enerspectrum-Installation/temp/redis-stable/utils
-echo "Installing Redis Server"
-sh ./install_server.sh
-pwd
-popd
-echo "Removing the Folder"
-pwd
-rm -rf ./temp/
-echo "Adding Redis to Startup"
-update-rc.d redis_6379 defaults
-
-
-
-
-
-
+echo " ###### Installation Complete ###### "
+echo ""
+echo "Go to /var/app/Enerspectrum/backend"
+echo "And please run the command 'node app'"
+echo ""
+echo "#####################################"
 
 
  
