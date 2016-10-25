@@ -49,6 +49,8 @@ update-rc.d redis_6379 defaults
 #Adds mongo to startup -> This only needs to be done on 16.04
 if [ "$OS_VER" = "16.04" ];
 then
-    echo "Adding mongo to startup"
+    echo "Starting mongo as a service"
     systemctl start mongodb
+    echo "Adding mongo to startup"
+    systemctl enable mongodb
 fi
